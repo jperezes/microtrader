@@ -38,17 +38,17 @@ public class TraderUtils {
             if (TraderUtils.timeToSell()) {
                 portfolio.sell(numberOfShares, quote, p -> {
                     if (p.succeeded()) {
-                        System.out.println("Sold " + numberOfShares + " of " + company + "!");
+                        // System.out.println("Sold " + numberOfShares + " of " + company + "!");
                     } else {
-                        System.out.println("D'oh, failed to sell " + numberOfShares + " of " + company + " : " + p.cause());
+                        // System.out.println("D'oh, failed to sell " + numberOfShares + " of " + company + " : " + p.cause());
                     }
                 });
             } else {
                 portfolio.buy(numberOfShares, quote, p -> {
                     if (p.succeeded()) {
-                        System.out.println("Bought " + numberOfShares + " of " + company + " !");
+                        // System.out.println("Bought " + numberOfShares + " of " + company + " !");
                     } else {
-                        System.out.println("D'oh, failed to buy " + numberOfShares + " of " + company + " : " + p.cause());
+                        // System.out.println("D'oh, failed to buy " + numberOfShares + " of " + company + " : " + p.cause());
                     }
                 });
             }
