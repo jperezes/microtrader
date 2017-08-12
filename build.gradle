@@ -47,7 +47,7 @@ allprojects {
 
   task copyDeps(type: Copy) {
     from (configurations.runtime + configurations.testRuntime) exclude '*'
-    into 'tmp'
+    into '/tmp'
   }
 
   test {
