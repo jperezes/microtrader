@@ -12,6 +12,7 @@ RUN echo "http://nl.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositori
 COPY gradle /app/gradle
 COPY build.gradle settings.gradle gradlew /app/
 WORKDIR /app/
+RUN ls -l
 RUN ./gradlew copyDeps
 
 # Install module dependencies
@@ -20,7 +21,6 @@ COPY microtrader-quote/build.gradle /app/microtrader-quote/
 COPY microtrader-portfolio/build.gradle /app/microtrader-portfolio/
 COPY microtrader-dashboard/build.gradle /app/microtrader-dashboard/
 COPY microtrader-dashboard/src/main/resources/webroot/bower.json /app/microtrader-dashboard/src/main/resources/webroot/bower.json
-RUN ls -l
 RUN ./gradlew copyDeps
 
 # Set the app version and copy the application source
