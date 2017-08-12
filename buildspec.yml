@@ -11,11 +11,11 @@ phases:
       - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"
   pre_build:
     commands:
+      - make login
       - make test
       - make release
-      - make tag:default
   post_build:
     commands:
-      - make login
+      - make tag:default
       - make publish
       - make logout
