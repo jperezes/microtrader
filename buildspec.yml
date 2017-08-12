@@ -18,4 +18,9 @@ phases:
     commands:
       - make tag:default
       - make publish
+      - make version > build/version.txt
       - make logout
+
+artifacts:
+  files:
+    - build/**/*
