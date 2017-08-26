@@ -1,8 +1,8 @@
 version: 0.2
 
-env:
-  variables:
-    APP_VERSION: ${CODEBUILD_RESOLVED_SOURCE_VERSION}
+# env:
+#   variables:
+#     APP_VERSION: ${CODEBUILD_RESOLVED_SOURCE_VERSION}
 
 phases:
   install:
@@ -14,6 +14,8 @@ phases:
       - make login
   build:
     commands:
+      - export BUILD_ID=$(echo $CODEBUILD_BUILD_ID | sed 's/^[^:]*://g')
+      - export APP_VERSION=$CODEBUILD_RESOLVED_SOURCE_VERSION.$BUILD_ID
       - make test
       - make release
       - make tag:default
