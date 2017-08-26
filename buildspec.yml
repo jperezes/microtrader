@@ -1,9 +1,5 @@
 version: 0.2
 
-# env:
-#   variables:
-#     APP_VERSION: ${CODEBUILD_RESOLVED_SOURCE_VERSION}
-
 phases:
   install:
     commands:
