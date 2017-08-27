@@ -17,8 +17,6 @@ phases:
       - make tag:default
       - make publish
       - make version > build/version.json
-      - zip -j build/version.zip build/version.json
-      - aws s3 cp build/version.zip s3://${VERSION_BUCKET}/version.zip
   post_build:
     commands:
       - make logout
