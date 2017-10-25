@@ -17,7 +17,7 @@ phases:
       - make version > build/version.json
   post_build:
     commands:
-      - make login
+      - make logout
 
 artifacts:
   files:
